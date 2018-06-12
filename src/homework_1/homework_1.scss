@@ -1,0 +1,208 @@
+@import "background.css";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1, h2, h3 , p , img{
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 850px;
+}
+
+.user {
+  color: white;
+  font-size: 2.5rem;
+  padding-bottom: 45px;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.content-block {
+  display: flex;
+  position: relative;
+  height: 150px;
+  margin-bottom: 16px;
+  padding: 5px;
+}
+
+.content-block__image {
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.content-block--home {
+  flex-basis: 15%;
+  background-color:#3387ea ;
+}
+
+.content-block--contact {
+  flex-basis: 15%;
+  background-color: #f9be3e;
+}
+
+.content-block--hire {
+  flex-basis: 30%;
+  background-color: #d3573e;
+
+}
+
+.content-block--photos {
+  flex-basis: 15%;
+  background-color: #59b0e2;
+}
+
+.content-block--about {
+  flex-basis: 15%;
+  background-color: #33af95;
+}
+
+.content-block--about-long {
+  flex-basis: 32.5%;
+  background-color: #86a73f;
+}
+
+.content-block--contact-color {
+  flex-basis: 15%;
+  background-color: #7e5b8c;
+}
+
+.content-block--blog {
+  padding: 0;
+  display: flex;
+  flex-basis: 47.5%;
+  background-color: #151a26;
+}
+
+.content-block__text {
+  color: white;
+  display: flex;
+  align-self: flex-end;
+}
+
+.content-block__blog--image {
+  height: 150px;
+}
+
+.content-block__blog--text {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media screen and (max-width: 430px) {
+  .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0,0);
+    width: 100%;
+
+  }
+
+  .user {
+    color: #ffffff;
+    font-size: 2.5rem;
+    padding-bottom: 45px;
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .content-block {
+    display: flex;
+    position: relative;
+    height: 135px;
+    margin-bottom: 15px;
+    padding: 5px;
+  }
+
+  .content-block__image {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+
+  .content-block--home {
+    flex-basis: 48%;
+    background-color:#3387ea ;
+  }
+
+  .content-block--contact {
+    flex-basis: 48%;
+    background-color: #f9be3e;
+  }
+
+  .content-block--hire {
+    flex-basis: 100%;
+    background-color: #d3573e;
+
+  }
+
+  .content-block--photos {
+    flex-basis: 48%;
+    background-color: #59b0e2;
+  }
+
+  .content-block--about {
+    flex-basis: 48%;
+    background-color: #33af95;
+  }
+
+  .content-block--about-long {
+    flex-basis: 100%;
+    background-color: #86a73f;
+  }
+
+  .content-block--contact-color {
+    flex-basis: 100%;
+    background-color: #7e5b8c;
+  }
+
+  .content-block--blog {
+    padding: 0;
+    display: flex;
+    flex-basis: 100%;
+    background-color: #151a26;
+  }
+
+  .content-block__text {
+    color: white;
+    display: flex;
+    align-self: flex-end;
+  }
+
+  .content-block__blog--image {
+    height: 135px;
+  }
+
+  .content-block__blog--text {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+}
