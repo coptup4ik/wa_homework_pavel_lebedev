@@ -1,0 +1,197 @@
+body {
+    background-image: url(../assets/images/background.jpg);
+    margin: 0;
+    padding: 0;
+}* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif; }
+
+h1, h2, h3, p, img {
+  padding: 0;
+  margin: 0; }
+
+.wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 850px; }
+
+.user {
+  color: white;
+  font-size: 2.5rem;
+  padding-bottom: 45px; }
+
+.content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.content-block {
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 150px;
+  margin-bottom: 16px;
+  padding: 5px; }
+
+.content-block__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+
+.content-block--home {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  background-color: #3387ea; }
+
+.content-block--contact {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  background-color: #f9be3e; }
+
+.content-block--hire {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  background-color: #d3573e; }
+
+.content-block--photos {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  background-color: #59b0e2; }
+
+.content-block--about {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  background-color: #33af95; }
+
+.content-block--about-long {
+  -ms-flex-preferred-size: 32.5%;
+      flex-basis: 32.5%;
+  background-color: #86a73f; }
+
+.content-block--contact-color {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+  background-color: #7e5b8c; }
+
+.content-block--blog {
+  padding: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: 47.5%;
+      flex-basis: 47.5%;
+  background-color: #151a26; }
+
+.content-block__text {
+  color: white;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: end;
+      align-self: flex-end; }
+
+.content-block__blog--image {
+  height: 150px; }
+
+.content-block__blog--text {
+  color: white;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+@media screen and (max-width: 430px) {
+  .wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+    width: 100%; }
+  .user {
+    color: #ffffff;
+    font-size: 2.5rem;
+    padding-bottom: 45px; }
+  .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+  .content-block {
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    height: 135px;
+    margin-bottom: 15px;
+    padding: 5px; }
+  .content-block__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+  .content-block--home {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+    background-color: #3387ea; }
+  .content-block--contact {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+    background-color: #f9be3e; }
+  .content-block--hire {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    background-color: #d3573e; }
+  .content-block--photos {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+    background-color: #59b0e2; }
+  .content-block--about {
+    -ms-flex-preferred-size: 48%;
+        flex-basis: 48%;
+    background-color: #33af95; }
+  .content-block--about-long {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    background-color: #86a73f; }
+  .content-block--contact-color {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    background-color: #7e5b8c; }
+  .content-block--blog {
+    padding: 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    background-color: #151a26; }
+  .content-block__text {
+    color: white;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: end;
+        align-self: flex-end; }
+  .content-block__blog--image {
+    height: 135px; }
+  .content-block__blog--text {
+    color: white;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center; } }
