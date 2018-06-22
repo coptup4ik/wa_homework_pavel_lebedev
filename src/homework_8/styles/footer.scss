@@ -1,0 +1,45 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.footer {
+  @include pageContent;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-logos {
+    padding: 0 40px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    @include tablet {
+      flex-direction: column;
+      width: 100%;
+      background-color: #37425b;
+    }
+  }
+  &-copyright {
+    margin-top: 180px;
+    color:$header-background-color;
+  }
+  &-nav__menu {
+    display: flex;
+    padding: 50px;
+    @include  tablet {
+      padding: 10px;
+    }
+  }
+  &-nav__link {
+    text-decoration: none;
+  }
+  &-nav__item {
+    padding: 0 19px;
+    @include tablet {
+      padding: 0 5px;
+    }
+  }
+  &-nav__link-title {
+    color: $header-background-color;
+  }
+}

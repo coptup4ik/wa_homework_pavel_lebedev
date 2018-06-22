@@ -1,0 +1,201 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+$page-header-height:920px;
+$page-nav-height:40px;
+
+.page-header {
+  background-color: $header-background-color;
+  padding-top: 20px;
+}
+
+.page-nav {
+  @include pageContent;
+  @include flex;
+  @include pagePadding;
+  justify-content: space-between;
+  position: relative;
+  height: $page-nav-height;
+  @include mobile {
+    padding: 0 5px;
+  }
+  &__logo {
+    color: white;
+    font-size: $base-font-size*1.625;
+    font-weight: lighter;
+    display: inline-block;
+  }
+  &__menu {
+     display: flex;
+    @include mobile {
+      display: none;
+    }
+  }
+  &__item {
+    padding: 0 19px;
+    @include mobile {
+      padding: 10px 40px;
+      //margin: 10px 0;
+      border-bottom: 1px solid grey;
+    }
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__link-title {
+    color: $header-text-color;
+  }
+  &__menu--toggle {
+    display: none;
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      justify-content: space-between;
+      top: $page-nav-height;
+      left: 0;
+      width: 100%;
+      background-color: rgba(8, 8, 17, 0.75);
+      -webkit-animation-name: menuTransform;
+      -moz-animation-name: menuTransform;
+      -o-animation-name: menuTransform;
+      animation-name: menuTransform;
+      animation-duration: .35s;
+      transform-origin: left;
+    }
+  }
+}
+
+.account-panel {
+  display: flex;
+  align-items: center;
+  @include  mobile {
+    display: none;
+  }
+  &__btn{
+    padding-right: 30px;
+    @include mobile {
+      padding: 10px 0;
+    }
+  }
+  &--toggle {
+    display: none;
+    @include mobile {
+      position: absolute;
+      flex-direction: column;
+      @include flex;
+      padding: 10px 40px;
+      -webkit-animation-name: loginTransform;
+      -moz-animation-name: loginTransform;
+      -o-animation-name: loginTransform;
+      animation-name: loginTransform;
+      animation-duration: .35s;
+      transform-origin: right;
+      background-color: rgba(8, 8, 17, 0.75);
+      right: 0;
+      top: $page-nav-height;
+    }
+  }
+}
+
+
+
+.banner {
+  @include pageContent;
+  @include flex;
+  justify-content: space-between;
+  @include pagePadding;
+  margin-top: 50px;
+  height: 792px;
+  background-image: url("../../assets/images/artboard.png");
+  background-size: contain;
+  background-position: bottom right 40px;
+  background-repeat: no-repeat;
+  @include tablet {
+    background-image: url("../../assets/images/bitcoin.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    height: 500px;
+    margin-top: 25px;
+    @include mobile {
+      height: 300px;
+      margin-top: 20px;
+    }
+  }
+  //&-img{
+  //  margin-right: 38px;
+  //  flex: 0 0 auto;
+  //  background-image: url("../../assets/images/artboard.png");
+  //  background-size: contain;
+  //  background-position: bottom right;
+  //  width: 463px;
+  //  height: 100%;
+  //  background-repeat: no-repeat;
+  //  border: 1px solid red;
+  //  @include tablet{
+  //    display: none;
+  //  }
+  //}
+}
+//
+.banner-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 350px;
+  max-width: 500px;
+
+  &__text {
+    color:$header-text-color;
+    text-align: left;
+    @include tablet{
+      text-align: center;
+    }
+  }
+  &__header {
+    font-size: $base-font-size*3;
+    font-weight: 400;
+    line-height: 1.2;
+    padding-bottom: 40px;
+    @include tablet{
+      font-size: $base-font-size*2;
+      padding-bottom: 20px;
+    }
+  }
+  &__content {
+    line-height: 2;
+    padding-bottom: 35px;
+    @include mobile{
+      line-height: 1;
+      padding-bottom: 15px;
+    }
+  }
+  &__but {
+    align-self: flex-start;
+
+    @include tablet{
+    align-self: center;
+    }
+  }
+}
+
+@keyframes menuTransform {
+  from {
+    transform:scaleX(0);
+
+  }
+  to  {
+    transform:scaleX(1);
+  }
+
+}
+@keyframes loginTransform {
+  from {
+    transform: scaleX(0);
+  }
+  to  {
+    transform: scaleX(1);
+  }
+
+}

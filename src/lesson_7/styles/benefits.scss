@@ -1,0 +1,45 @@
+@import "./variables.scss";
+@import "mixins.scss";
+$benefit-height:420px;
+$benefit-width:1257px;
+
+.benefits {
+  display: flex;
+  justify-content: space-around;
+  @include flexCenterVertical;
+  width: $benefit-width;
+  height: $benefit-height;
+  background-color: $background-light;
+  box-shadow: 0 10px 34px 0 rgba(210, 210, 210, 0.5);
+  position: absolute;
+  bottom:-300px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: $btn-default-border-radius*2;
+}
+
+.benefits-block {
+  width: 300px;
+  &__image {
+    margin-bottom: 26px;
+    width: 72px;
+    height: 72px;
+    background-color: $background-dark;
+  }
+  &__name {
+    margin-bottom: 28px;
+    font-size: 18px;
+    color: $background-dark;
+    font-weight: bold;
+  }
+  &__underline {
+    margin-bottom: 18px;
+    background-color: $btn-button-success-color ;
+    width: 60px;
+    border: 2px solid $btn-button-success-color;
+  }
+  &__description {
+    color: $background-dark;
+    line-height: 2;
+  }
+}

@@ -1,0 +1,89 @@
+@import "/variables.scss";
+@import "mixins.scss";
+$navbar-height:58px;
+$page-nav-item-margin:36px;
+$page-nav-link-color: #ffffff;
+$logo-font-size:26px;
+$banner-height:920px;
+
+
+.page-header {
+  padding-top: 20px;
+  position: relative;
+  background-color: $background-dark;
+}
+
+.page-nav {
+  @include pageContainer;
+  height: $navbar-height;
+  display: flex;
+  justify-content: space-between;
+  &__logo {
+    font-weight: normal;
+    @include flexCenterVertical;
+    color: $page-nav-link-color;
+    font-size: $logo-font-size;
+  }
+  &__toggle {
+    display: none;
+  }
+  &__menu {
+    display: flex;
+    justify-content: center;
+  }
+  &__item {
+    margin: 0 $page-nav-item-margin;
+    display: flex;
+  }
+  &__link {
+    color: $page-nav-link-color;
+    @include flexCenterVertical;
+    justify-content: center;
+  }
+
+}
+
+.account-panel {
+  display: flex;
+  align-items: center;
+  &__btn {
+    margin: 0;
+  }
+}
+
+.banner {
+  @include pageContainer;
+  height: $banner-height;
+  display: flex;
+  justify-content: space-between;
+  &__img {
+    align-self: flex-end;
+    margin: 0;
+    margin-right: 78px;
+    width:463px;
+    height: 792px;
+    background-image: url("../../assets/images/artboard.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.banner-info {
+  padding-top: 229px;
+  width: 553px;
+  &__text {
+    padding-bottom: 40px;
+    color: $page-nav-link-color;
+  }
+  &__text-header {
+    font-size: 48px;
+  }
+  &__text-description {
+    font-size: 16px;
+    line-height: 2;
+  }
+  &__btn {
+    padding: $base-font-size $base-font-size*3;
+  }
+
+}

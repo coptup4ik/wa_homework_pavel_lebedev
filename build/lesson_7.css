@@ -1,0 +1,164 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif; }
+
+body, ul, ol, h1, h2, h3, h4, hr, p {
+  padding: 0;
+  margin: 0; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.page-header {
+  padding-top: 20px;
+  position: relative;
+  background-color: #313a5a; }
+
+.page-nav {
+  max-width: 1257px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 58px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  .page-nav__logo {
+    font-weight: normal;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    color: #ffffff;
+    font-size: 26px; }
+  .page-nav__toggle {
+    display: none; }
+  .page-nav__menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .page-nav__item {
+    margin: 0 36px;
+    display: -ms-flexbox;
+    display: flex; }
+  .page-nav__link {
+    color: #ffffff;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
+
+.account-panel {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
+  .account-panel__btn {
+    margin: 0; }
+
+.banner {
+  max-width: 1257px;
+  margin: 0 auto;
+  padding: 0 40px;
+  height: 920px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  .banner__img {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin: 0;
+    margin-right: 78px;
+    width: 463px;
+    height: 792px;
+    background-image: url(assets/images/artboard.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat; }
+
+.banner-info {
+  padding-top: 229px;
+  width: 553px; }
+  .banner-info__text {
+    padding-bottom: 40px;
+    color: #ffffff; }
+  .banner-info__text-header {
+    font-size: 48px; }
+  .banner-info__text-description {
+    font-size: 16px;
+    line-height: 2; }
+  .banner-info__btn {
+    padding: 16px 48px; }
+
+.btn {
+  outline: none;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  padding: 16px 24px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px; }
+  .btn_success {
+    background-color: #1fdb84;
+    box-shadow: 0 8px 34px 0 rgba(31, 219, 132, 0.6); }
+  .btn:hover {
+    cursor: pointer; }
+
+.btn_large {
+  font-size: 16px;
+  border: none;
+  color: #ffffff;
+  padding: 16px 48px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px; }
+
+.benefits {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 1257px;
+  height: 420px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 34px 0 rgba(210, 210, 210, 0.5);
+  position: absolute;
+  bottom: -300px;
+  left: 50%;
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+  border-radius: 10px; }
+
+.benefits-block {
+  width: 300px; }
+  .benefits-block__image {
+    margin-bottom: 26px;
+    width: 72px;
+    height: 72px;
+    background-color: #313a5a; }
+  .benefits-block__name {
+    margin-bottom: 28px;
+    font-size: 18px;
+    color: #313a5a;
+    font-weight: bold; }
+  .benefits-block__underline {
+    margin-bottom: 18px;
+    background-color: #1fdb84;
+    width: 60px;
+    border: 2px solid #1fdb84; }
+  .benefits-block__description {
+    color: #313a5a;
+    line-height: 2; }

@@ -1,0 +1,151 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+.purchase {
+  @include pageContent;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &-header {
+    font-size: $base-font-size*2.5;
+    max-width: 810px;
+    text-align: center;
+    line-height: 1.6;
+    color: $header-background-color;
+    font-weight: bold;
+    @include mobile {
+      font-size: $base-font-size*1.5;
+      max-width: 550px;
+    }
+    @include xs-mobile {
+      font-size: $base-font-size;
+      max-width: 360px;
+    }
+  }
+}
+
+.purchase-time {
+  margin-top: 60px;
+  border: 1px solid #aefdd9;
+  display: flex;
+  width: 470px;
+  @include xs-mobile {
+    width: 340px;
+  }
+  &__month {
+    color: $button-success-background-color;
+    padding: 20px;
+    flex-grow: 1;
+    text-align: center;
+    background-color: white;
+  }
+  &__year {
+    color:$button-success-background-color;
+    padding: 20px;
+    flex-grow: 2;
+    text-align: center;
+    background-color: #f1fff8;
+  }
+}
+
+.purchase-plan {
+  margin-top: 64px;
+  display: flex;
+  align-items: baseline;
+  position: relative;
+  width: 100%;
+  @include tablet {
+    flex-direction: column;
+  }
+  @include mobile{
+    &__but {
+      font-size: $base-font-size/2.5;
+      padding: 10px 7px;
+    }
+  }
+}
+
+.plan {
+  border: 1px solid  $button-success-background-color;
+  margin: 20px;
+  padding: 60px;
+  width: 378px;
+  height: 665px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition-duration: .5s;
+  align-items: center;
+  position: relative;
+  @include tablet {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    margin: 20px 0;
+  }
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    content: "";
+    background-color: #0a8aff;
+    height: 3px;
+    transition-duration: .5s;
+
+
+  }
+  &:hover::before {
+    width: 100%;
+    transition-duration: .5s;
+  }
+
+  &:hover {
+    box-shadow: 0 7px 24px 0 rgba(83, 83, 83, 0.1);
+    transition-duration: .5s;
+    background-color: white;
+  }
+
+  &__type--text {
+    text-align: center;
+    @include mobile {
+      font-size: $base-font-size/1.5;
+    }
+  }
+  &-price__type {
+    font-size: $base-font-size*1.5;
+    color: $header-background-color;
+    @include mobile {
+      font-size: $base-font-size;
+    }
+  }
+  &-price {
+    line-height: 0.89;
+    display: flex;
+    flex-direction: column;
+  }
+  &-price__cost {
+    padding-top: 30px;
+    font-size: $base-font-size*4.5;
+    color: $button-success-background-color;
+    @include mobile {
+      font-size: $base-font-size*2.5;
+    }
+  }
+  &-price__month {
+    margin-top: 13px;
+    color: $header-background-color;
+  }
+  &-condition {
+    letter-spacing: 0.2px;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+    @include mobile {
+      letter-spacing: 0;
+    }
+  }
+
+}

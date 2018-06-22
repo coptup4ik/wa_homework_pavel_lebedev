@@ -1,0 +1,70 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+$benefit-height:420px;
+$benefit-header-text-color:#031d5b;
+$benefit-content-text-color:#5b6c94;
+$benefit-background-color:white;
+
+.benefits {
+  @include pageContent;
+  background-color: $benefit-background-color;
+  box-shadow: 0 10px 34px 0 rgba(210, 210, 210, 0.5);
+  display: flex;
+  justify-content: space-between;
+  height: $benefit-height;
+  align-items: center;
+  padding: 0 78px;
+  transform: translateY(-100px);
+  border-radius: $button-border-radius*2;
+  @include tablet {
+    box-shadow: 0 10px 34px 0 rgba(122, 137, 226, 0.5);
+    background-color: #383f69;
+    flex-direction: column;
+    padding: 15px 25px;
+    transform: translateY(-50px)
+  }
+  @include mobile {
+    transform: translateY(-10px)
+  }
+}
+
+.benefit-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 300px;
+  padding: 65px 0;
+  justify-content: space-between;
+  @include tablet {
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: 2px solid $button-success-background-color;
+  }
+  &__image  {
+    width: 72px;
+    @include tablet {
+      width: 50px;
+    }
+  }
+  &__header {
+    color: $benefit-header-text-color ;
+    font-size: $base-font-size+2;
+    @include tablet {
+      font-size: $base-font-size -4;
+      color: white;
+    }
+  }
+  &__underline {
+    width: 60px;
+    border: 2px solid $button-success-background-color;
+  }
+  &__description {
+    color: $benefit-content-text-color;
+    line-height: 2;
+    @include tablet {
+      font-size: $base-font-size/1.5;
+      line-height: 1;
+      color: white;
+    }
+  }
+}
