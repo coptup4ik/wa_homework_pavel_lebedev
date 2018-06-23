@@ -1,0 +1,5 @@
+.notification-bar__message {
+  display: none; }
+
+.notification-bar_active .notification-bar__message {
+  display: block; }

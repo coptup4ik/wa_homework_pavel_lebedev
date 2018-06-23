@@ -14,6 +14,8 @@ const baseConf = (_path) => {
         homework_1: ['babel-polyfill', './src/homework_1/homework_1.js'],
         lesson_7: ['babel-polyfill', './src/lesson_7/lesson_7.js'],
         homework_8: ['babel-polyfill', './src/homework_8/homework_8.js'],
+        lesson_9: ['babel-polyfill', './src/lesson_9/lesson_9.js'],
+        homework_9: ['babel-polyfill', './src/homework_9/homework_9.js'],
     };
 
     const plugins = Object.keys(entry).reduce((acc, name) => {

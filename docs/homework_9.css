@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 12px; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, a, span, figure, img, ul, li {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style: none; }
+
+.trafficLight {
+  margin: 0 auto;
+  width: 150px;
+  height: 420px;
+  background-color: #263740;
+  border-radius: 15px;
+  box-shadow: inset -20px 0 0 #1E2C33;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  position: relative;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center; }
+  .trafficLight-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center; }
+    .trafficLight-wrapper__header {
+      text-align: center;
+      margin: 30px; }
+  .trafficLight-box {
+    width: 80px;
+    height: 130px;
+    margin: 0 auto;
+    background-color: #263740;
+    box-shadow: inset -20px 0 0 #1E2C33; }
+  .trafficLight__light {
+    cursor: pointer;
+    outline: none;
+    width: 100px;
+    height: 100px;
+    background-color: #292929;
+    border: 2px solid white;
+    border-radius: 50%;
+    transition-duration: .5s; }
+  .trafficLight__light-red-toggle {
+    transition-duration: .5s;
+    background-color: red; }
+  .trafficLight__light-yellow-toggle {
+    transition-duration: .5s;
+    background-color: yellow; }
+  .trafficLight__light-green-toggle {
+    transition-duration: .5s;
+    background-color: green; }
+
+.buttons__but1-toggle {
+  background-color: red; }
+
+.buttons__but2-toggle {
+  background-color: green; }
