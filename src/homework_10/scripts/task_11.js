@@ -11,7 +11,7 @@ function powV1(x,n) {
 }
 
 function powV2(x, n) {
-    if(n !=1 ){
+    if(n !== 1 ){
         return x*powV2(x, n-1);
     }else {
         return x;

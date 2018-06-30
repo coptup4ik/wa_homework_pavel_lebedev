@@ -5,10 +5,10 @@ console.log(numbersArray);
 
 function filterRange(arr, a, b) {
     let newArray = [];
-    for (let key in arr){
+    for (let i = 0;  i<arr.length; i++){
 
-        if (arr[key] >= a && arr[key] <= b) {
-            newArray.push(arr[key]);
+        if (arr[i] >= a && arr[i] <= b) {
+            newArray.push(arr[i]);
         }
     }
 
