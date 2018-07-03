@@ -1,0 +1,50 @@
+@import "./components/mixin.scss";
+$contentWidth: 800px;
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.content-wrapper {
+  @include positionAbs;
+  width: $contentWidth;
+  height: 300px;
+  background-color: #dadada;
+  display: table;
+  flex-wrap: wrap;
+}
+
+.btn  {
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+.buttons {
+  margin: 0 auto;
+  background-color: #5bcfff;
+  display: flex;
+  justify-content: center;
+}
+
+.lamp {
+  border:1px solid green;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  margin: 0 5px;
+  &__element {
+    &_active {
+      background-color: red;
+    }
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: grey;
+  }
+  &__button {
+    width: 100px;
+    height: 30px;
+  }
+}

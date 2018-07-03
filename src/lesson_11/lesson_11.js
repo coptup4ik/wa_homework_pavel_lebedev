@@ -54,33 +54,32 @@ function development() {
 
 }
 
-// const person = new Person('John', 30);
-// const person2 = new Person('Jack', 20);
+const person = new Person('John', 30);
+const person2 = new Person('Jack', 20);
 
-// function counter() {
-//     let clickCounter = 0;
-//     const btn = document.querySelector('#btn');
-//     btn.addEventListener('click', ()=> {
-//         clickCounter++;
-//         console.log(clickCounter)
-//     })
-// }
-//
+function counter() {
+    let clickCounter = 0;
+    const btn = document.querySelector('#btn');
+    btn.addEventListener('click', ()=> {
+        clickCounter++;
+        console.log(clickCounter)
+    })
+}
 
-// function Person(name, age){
-//     this.name = name;
-//     this.age = age;
-//     this.greet = greeting;
-// }
-// const obj = new Person();
-//
-// person.greet();
-// person2.greet();
-// // counter();
 
-function Developer(name, age, language) {
+function Person(name, age){
     this.name = name;
     this.age = age;
+    this.greet = greeting;
+}
+const obj = new Person();
+
+person.greet();
+person2.greet();
+// counter();
+
+function Developer(name, age, language) {
+    Person.call(this, name, age);
     this.language = language;
     this.greet = greeting;
     this.development = development
@@ -88,5 +87,6 @@ function Developer(name, age, language) {
 
 const programmer = new Developer( 'Stewey', 25, 'C++' );
 
+console.log('This is function', programmer);
 programmer.greet();
 programmer.development();
