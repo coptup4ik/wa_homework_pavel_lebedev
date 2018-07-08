@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 352);
+/******/ 	return __webpack_require__(__webpack_require__.s = 355);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9059,25 +9059,22 @@ module.exports = function (regExp, replace) {
 /* 349 */,
 /* 350 */,
 /* 351 */,
-/* 352 */
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(353);
+module.exports = __webpack_require__(356);
 
 
 /***/ }),
-/* 353 */
+/* 356 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-
-__webpack_require__(354);
-
-__webpack_require__(355);
-
-__webpack_require__(356);
 
 __webpack_require__(357);
 
@@ -9093,8 +9090,14 @@ __webpack_require__(362);
 
 __webpack_require__(363);
 
+__webpack_require__(364);
+
+__webpack_require__(365);
+
+__webpack_require__(366);
+
 /***/ }),
-/* 354 */
+/* 357 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9109,7 +9112,7 @@ function randomInteger(min, max) {
 randomInteger(1, 10);
 
 /***/ }),
-/* 355 */
+/* 358 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9133,7 +9136,7 @@ delete user.name;
 console.log('Удаляем имя из списка', user, user.name);
 
 /***/ }),
-/* 356 */
+/* 359 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9154,7 +9157,7 @@ console.log('Добавляем значения для проверки фун�
 console.log(isEmpty(a));
 
 /***/ }),
-/* 357 */
+/* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9191,7 +9194,7 @@ calc(salaries);
 calc();
 
 /***/ }),
-/* 358 */
+/* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9235,7 +9238,7 @@ biggestSalary(salaries);
 // console.log( biggestSalary());
 
 /***/ }),
-/* 359 */
+/* 362 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9269,7 +9272,7 @@ function multiplyNumeric(obj) {
 console.log(multiplyNumeric(salaries));
 
 /***/ }),
-/* 360 */
+/* 363 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9295,7 +9298,7 @@ function promptSum() {
 promptSum();
 
 /***/ }),
-/* 361 */
+/* 364 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9305,18 +9308,18 @@ console.log('task_9 init');
 
 var array = ['banana', 1, 45, 'any', 23, 54, 43, 'hello', 0, false];
 function find(arr, value) {
-    for (var key in arr) {
-        if (arr[key] === value) {
-            return key;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === value) {
+            return i;
         }
     }
     return -1;
 }
 
-console.log(find(array, '0'));
+console.log(find(array, 45));
 
 /***/ }),
-/* 362 */
+/* 365 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9329,10 +9332,10 @@ console.log(numbersArray);
 
 function filterRange(arr, a, b) {
     var newArray = [];
-    for (var key in arr) {
+    for (var i = 0; i < arr.length; i++) {
 
-        if (arr[key] >= a && arr[key] <= b) {
-            newArray.push(arr[key]);
+        if (arr[i] >= a && arr[i] <= b) {
+            newArray.push(arr[i]);
         }
     }
 
@@ -9342,7 +9345,7 @@ function filterRange(arr, a, b) {
 console.log(filterRange(numbersArray, 7, 36));
 
 /***/ }),
-/* 363 */
+/* 366 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -9360,7 +9363,7 @@ function powV1(x, n) {
 }
 
 function powV2(x, n) {
-    if (n != 1) {
+    if (n !== 1) {
         return x * powV2(x, n - 1);
     } else {
         return x;

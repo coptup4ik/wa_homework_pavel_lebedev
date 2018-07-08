@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 348);
+/******/ 	return __webpack_require__(__webpack_require__.s = 351);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9055,25 +9055,30 @@ module.exports = function (regExp, replace) {
 /* 345 */,
 /* 346 */,
 /* 347 */,
-/* 348 */
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(349);
+module.exports = __webpack_require__(352);
 
 
 /***/ }),
-/* 349 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(350);
+__webpack_require__(353);
 
-var _lighter = __webpack_require__(351);
+var _lighter = __webpack_require__(354);
 
 var lighterElement = document.querySelector('#lighter1');
+// import "./scripts/lesson_11_script.js";
+
 var lighterElement2 = document.querySelector('#lighter2');
 var lighterElement3 = document.querySelector('#lighter3');
 
@@ -9082,13 +9087,13 @@ var lighterElement3 = document.querySelector('#lighter3');
 (0, _lighter.lighter)(lighterElement3);
 
 /***/ }),
-/* 350 */
+/* 353 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 351 */
+/* 354 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

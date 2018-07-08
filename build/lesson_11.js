@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 342);
+/******/ 	return __webpack_require__(__webpack_require__.s = 367);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9049,24 +9049,138 @@ module.exports = function (regExp, replace) {
 /* 339 */,
 /* 340 */,
 /* 341 */,
-/* 342 */
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(343);
+module.exports = __webpack_require__(368);
 
 
 /***/ }),
-/* 343 */
+/* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(344);
+__webpack_require__(369);
+
+//
+// let products = [
+//     {
+//         title: 'Test',
+//         price: '2500asd'
+//     },
+//     {
+//         title: 'Test',
+//         price: '2500'
+//     },
+//     {
+//         title: 'Test',
+//         price: '2800'
+//     }
+// ];
+//
+// function calcTotal(obj) {
+//     let sum = 0;
+//     for (let i=0; i < obj.length; i++ ){
+//         if (isNaN(obj[i])){
+//             obj[i]=0;
+//         }
+//         sum += obj[i];
+//     }
+//     return sum;
+// }
+//
+//
+// function calcTotal2(obj) {
+//     let sum = 0;
+//     for (let i=0; i < obj.length; i++ ){
+//         const number = Number(obj[i].price);
+//         if (!isNaN(number)) {
+//             sum += number;
+//         }
+//     }
+// }
+//
+//
+//
+//
+// // console.log( calcTotal([1, 2, 3, 4, '1233hsadsa']) );
+// console.log( calcTotal2(products));
+
+function greeting() {
+    console.log(this);
+    console.log('Hello my nam is ' + this.name);
+}
+
+function development() {
+    console.log('I use ' + this.language);
+}
+
+var person = new Person('John', 30);
+var person2 = new Person('Jack', 20);
+
+function counter() {
+    var clickCounter = 0;
+    var btn = document.querySelector('#btn');
+    btn.addEventListener('click', function () {
+        clickCounter++;
+        console.log(clickCounter);
+    });
+}
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+    this.greet = greeting;
+}
+var obj = new Person();
+
+person.greet();
+person2.greet();
+// counter();
+
+function Developer(name, age, language) {
+    Person.call(this, name, age);
+    this.language = language;
+    this.greet = greeting;
+    this.development = development;
+}
+
+var programmer = new Developer('Stewey', 25, 'C++');
+
+console.log('This is function', programmer);
+programmer.greet();
+programmer.development();
 
 /***/ }),
-/* 344 */
+/* 369 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

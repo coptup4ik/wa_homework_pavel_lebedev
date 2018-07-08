@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 342);
+/******/ 	return __webpack_require__(__webpack_require__.s = 370);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9049,27 +9049,169 @@ module.exports = function (regExp, replace) {
 /* 339 */,
 /* 340 */,
 /* 341 */,
-/* 342 */
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(343);
+module.exports = __webpack_require__(371);
 
 
 /***/ }),
-/* 343 */
+/* 371 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(344);
+__webpack_require__(372);
+
+__webpack_require__(373);
+
+__webpack_require__(374);
+
+__webpack_require__(375);
+
+__webpack_require__(376);
 
 /***/ }),
-/* 344 */
+/* 372 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 373 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function Animal(color, tail, eyes, name) {
+    this.color = color;
+    this.tail = tail;
+    this.eyes = eyes;
+    this.name = name;
+}
+
+function Horse() {
+    Animal.apply(this, arguments);
+    this.sound = function () {
+        console.log('Horse says igogo');
+    };
+}
+
+function Bird() {
+    Animal.apply(this, arguments);
+    this.sound = function () {
+        console.log('Bird says chickchirik');
+    };
+}
+
+var horseAnimal = new Horse('brown', 'true', 'two', 'Jack');
+var birdAnimal = new Bird('blue', 'true', 'two', 'Birdy');
+console.log(horseAnimal);
+horseAnimal.sound();
+
+console.log(birdAnimal);
+birdAnimal.sound();
+
+/***/ }),
+/* 374 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function Machine(power) {
+    var enable = false;
+    this.enabled = function () {
+        enable = true;
+    };
+    this.disabled = function () {
+        enable = false;
+    };
+    this.power = power;
+}
+
+var coffeMachine = new Machine(100);
+console.log(coffeMachine);
+
+/***/ }),
+/* 375 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function Machine() {
+    this.enable = false;
+    this.enabled = function () {
+        this.enable = true;
+    };
+    this.disabled = function () {
+        this.enable = false;
+    };
+}
+
+function Fridge(power) {
+    Machine.call(this);
+    var food = [];
+    this.addFood = function () {
+        if (this.enable === false) {
+            console.log('холодильник выключен');
+        } else if (arguments.length > power / 100) {
+            console.log('Слишком много еды');
+        } else {
+            console.log('Еда добавлена');
+            food.push.apply(food, arguments);
+        }
+    };
+    this.getFood = function () {
+        return food.slice();
+    };
+}
+
+var fridge = new Fridge(200);
+fridge.enabled();
+fridge.addFood('котлета');
+fridge.addFood('курица', 'торт', 'кукуруза', 'перец', 'морковка', 'лук');
+fridge.addFood('курица', 'торт');
+fridge.getFood();
+
+/***/ }),
+/* 376 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 /***/ })
 /******/ ]);

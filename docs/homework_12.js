@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 342);
+/******/ 	return __webpack_require__(__webpack_require__.s = 382);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9049,27 +9049,187 @@ module.exports = function (regExp, replace) {
 /* 339 */,
 /* 340 */,
 /* 341 */,
-/* 342 */
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(343);
+module.exports = __webpack_require__(383);
 
 
 /***/ }),
-/* 343 */
+/* 383 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(344);
+__webpack_require__(384);
+
+var _lamp = __webpack_require__(385);
+
+var _lampmanager = __webpack_require__(386);
+
+// const lamp1 = new LampLight(document.querySelector('#lamp1'));
+// const lamp2 = new LampLight(document.querySelector('#lamp2'));
+// const lamp3 = new LampLight(document.querySelector('#lamp3'));
+
+var lampmanager = new _lampmanager.LampManager(document.querySelector('.content-wrapper'), [new _lamp.LampLight(document.querySelector('#lamp1')), new _lamp.LampLight(document.querySelector('#lamp2')), new _lamp.LampLight(document.querySelector('#lamp3'))]);
 
 /***/ }),
-/* 344 */
+/* 384 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 385 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var BUTTON_LAMP_CLASS = 'lamp__control';
+var LAMP_CLASS = 'lamp__element';
+
+var LampLight = exports.LampLight = function () {
+    function LampLight(element) {
+        var _this = this;
+
+        _classCallCheck(this, LampLight);
+
+        this.element = element;
+        this.button = element.querySelector('.' + BUTTON_LAMP_CLASS);
+        this.light = element.querySelector('.' + LAMP_CLASS);
+        this.button.addEventListener('click', function () {
+            return _this.toggle();
+        });
+        this.enabled = false;
+    }
+
+    _createClass(LampLight, [{
+        key: 'switchOn',
+        value: function switchOn() {
+            this.element.classList.add('lamp_active');
+            this.enabled = true;
+        }
+    }, {
+        key: 'switchOff',
+        value: function switchOff() {
+            this.element.classList.remove('lamp_active');
+            this.enabled = false;
+        }
+    }, {
+        key: 'toggle',
+        value: function toggle() {
+            if (this.enabled) {
+                this.switchOff();
+            } else {
+                this.switchOn();
+            }
+        }
+    }]);
+
+    return LampLight;
+}();
+
+/***/ }),
+/* 386 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var LampManager = exports.LampManager = function () {
+    function LampManager(element, array) {
+        var _this = this;
+
+        _classCallCheck(this, LampManager);
+
+        this.element = element;
+        this.array = array;
+        console.log();
+        this.button = element.querySelector('.buttons');
+        this.button.addEventListener('click', function () {
+            return _this.toggleAll();
+        });
+    }
+
+    _createClass(LampManager, [{
+        key: 'toggleAll',
+        value: function toggleAll() {
+            var emptyArray = this.array.filter(function (item) {
+                return item.enabled === true;
+            });
+            if (emptyArray.length > 0) {
+                this.array.forEach(function (item) {
+                    item.switchOff();
+                });
+            } else {
+                this.array.forEach(function (item) {
+                    item.switchOn();
+                });
+            }
+        }
+    }]);
+
+    return LampManager;
+}();
 
 /***/ })
 /******/ ]);

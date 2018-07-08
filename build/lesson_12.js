@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 342);
+/******/ 	return __webpack_require__(__webpack_require__.s = 377);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9049,24 +9049,156 @@ module.exports = function (regExp, replace) {
 /* 339 */,
 /* 340 */,
 /* 341 */,
-/* 342 */
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(343);
+module.exports = __webpack_require__(378);
 
 
 /***/ }),
-/* 343 */
+/* 378 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(344);
+__webpack_require__(379);
+
+var _lighter = __webpack_require__(380);
+
+var firstLighter = new _lighter.Lighter(document.querySelector('#lighter1'));
+
+// function Car(doors, price) {
+//     this.doors = doors;
+//     this.price = price;
+// }
+//
+// function SportCar(speed, power) {
+//     Car.apply(this, arguments);
+//     this.speed = speed;
+//     this.power = power;
+//
+// }
+//
+// function Sedan(speed, power) {
+//     Car.apply(this, arguments);
+//     this.speed = speed;
+//     this.power = power;
+//     this.drive = function () {
+//         console.log('sportcar rides')
+//     }
+// }
+//
+// const car = new Sedan(4, 1000, 220, 180);
+// console.log(car);
+// car.drive();
 
 /***/ }),
-/* 344 */
+/* 379 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 380 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Lighter = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(381);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var LIGHTER_LIGHT_CLASS_NAME = 'street-lighter__light';
+var LIGHTER_LIGHT_ACTIVE_CLASS_NAME = 'street-lighter__light_active';
+
+var Lighter = function () {
+    function Lighter(targetElement) {
+        _classCallCheck(this, Lighter);
+
+        this.targetElement = targetElement;
+        this.lights = this.targetElement.querySelectorAll('.' + LIGHTER_LIGHT_CLASS_NAME);
+        console.log(this);
+        this.attachEvents();
+    }
+
+    _createClass(Lighter, [{
+        key: 'switchOffLights',
+        value: function switchOffLights() {
+            this.lights.forEach(function (light) {
+                light.classList.remove(LIGHTER_LIGHT_ACTIVE_CLASS_NAME);
+            });
+        }
+    }, {
+        key: 'switchOnLights',
+        value: function switchOnLights(element) {
+            element.classList.add(LIGHTER_LIGHT_ACTIVE_CLASS_NAME);
+        }
+    }, {
+        key: 'attachEvents',
+        value: function attachEvents() {
+            var _this = this;
+
+            this.lights.forEach(function (light) {
+                light.addEventListener('click', function () {
+                    _this.switchOffLights();
+                    _this.switchOnLights(light);
+                });
+            });
+        }
+    }]);
+
+    return Lighter;
+}();
+
+exports.Lighter = Lighter;
+
+/***/ }),
+/* 381 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

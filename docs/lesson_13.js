@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 342);
+/******/ 	return __webpack_require__(__webpack_require__.s = 387);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9035,7 +9035,66 @@ module.exports = function (regExp, replace) {
 
 /***/ }),
 /* 327 */,
-/* 328 */,
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Bulb = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(391);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Bulb = exports.Bulb = function () {
+    function Bulb(targetElement) {
+        _classCallCheck(this, Bulb);
+
+        this.target = targetElement; //присваиваем контекст аргументу
+        // this.control = targetElement.querySelector('.bulb__control'); // находим кнопку внутри блока (благодаря контексту определяется именно та кнопка, что нужна)
+        // this.lighter = targetElement.querySelector('.bulb__lighter');
+        this.isEnabled = false;
+        this.control.addEventListener('click', this.toggle.bind(this)); // присваиваем функцию переключения кнопке
+    }
+
+    _createClass(Bulb, [{
+        key: 'switchOn',
+        value: function switchOn() {
+            this.target.classList.add('bulb_active');
+            this.isEnabled = true;
+        }
+    }, {
+        key: 'switchOff',
+        value: function switchOff() {
+            this.target.classList.remove('bulb_active');
+            this.isEnabled = false;
+        }
+    }, {
+        key: 'toggle',
+        value: function toggle() {
+            if (this.isEnabled) {
+                this.switchOff();
+            } else {
+                this.switchOn();
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {}
+    }]);
+
+    return Bulb;
+}();
+
+// this.toggle.bind(this) =    () => this.toggle()
+
+/***/ }),
 /* 329 */,
 /* 330 */,
 /* 331 */,
@@ -9049,24 +9108,139 @@ module.exports = function (regExp, replace) {
 /* 339 */,
 /* 340 */,
 /* 341 */,
-/* 342 */
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(343);
+module.exports = __webpack_require__(388);
 
 
 /***/ }),
-/* 343 */
+/* 388 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(344);
+__webpack_require__(389);
+
+var _garland = __webpack_require__(390);
+
+__webpack_require__(328);
+
+var _bulb = __webpack_require__(328);
+
+// const bulb  = new Bulb(document.querySelector('#bulb1'));
+// const bulb2  = new Bulb(document.querySelector('#bulb2'));
+
+
+var garland = new _garland.Garland(document.querySelector('#garland'), [new _bulb.Bulb(document.querySelector('#bulb3')), new _bulb.Bulb(document.querySelector('#bulb4'))]);
 
 /***/ }),
-/* 344 */
+/* 389 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 390 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Garland = exports.Garland = function () {
+    function Garland(targetElement, bulbs) {
+        var _this = this;
+
+        _classCallCheck(this, Garland);
+
+        this.targetEl = targetElement;
+        this.bulbs = bulbs;
+        // this.lampsOutput = document.querySelector('.garland__lamps')
+        this.control = targetElement.querySelector('.garland__control');
+        this.control.addEventListener('click', function () {
+            return _this.toggleAll();
+        });
+    }
+
+    _createClass(Garland, [{
+        key: 'toggleAll',
+        value: function toggleAll() {
+            var enabledElements = this.bulbs.filter(function (bulb) {
+                return bulb.isEnabled === true;
+            });
+            console.log(enabledElements);
+            if (enabledElements.length > 0) {
+                this.bulbs.forEach(function (bulb) {
+                    bulb.switchOff();
+                });
+            } else {
+                this.bulbs.forEach(function (bulb) {
+                    bulb.switchOn();
+                });
+            }
+        }
+    }]);
+
+    return Garland;
+}();
+
+/***/ }),
+/* 391 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

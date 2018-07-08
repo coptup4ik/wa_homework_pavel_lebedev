@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 342);
+/******/ 	return __webpack_require__(__webpack_require__.s = 392);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9034,9 +9034,130 @@ module.exports = function (regExp, replace) {
 
 
 /***/ }),
-/* 327 */,
+/* 327 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Bulb = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(396);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Bulb = exports.Bulb = function () {
+    function Bulb(targetElement) {
+        _classCallCheck(this, Bulb);
+
+        this.target = targetElement; //присваиваем контекст аргументу
+        // this.control = targetElement.querySelector('.bulb__control'); // находим кнопку внутри блока (благодаря контексту определяется именно та кнопка, что нужна)
+        // this.lighter = targetElement.querySelector('.bulb__lighter');
+        this.isEnabled = false;
+        this.render();
+        this.control.addEventListener('click', this.toggle.bind(this)); // присваиваем функцию переключения кнопке
+    }
+
+    _createClass(Bulb, [{
+        key: 'switchOn',
+        value: function switchOn() {
+            this.target.classList.add('bulb_active');
+            this.isEnabled = true;
+        }
+    }, {
+        key: 'switchOff',
+        value: function switchOff() {
+            this.target.classList.remove('bulb_active');
+            this.isEnabled = false;
+        }
+    }, {
+        key: 'toggle',
+        value: function toggle() {
+            if (this.isEnabled) {
+                this.switchOff();
+            } else {
+                this.switchOn();
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            this.control = document.createElement('button');
+            this.lighter = document.createElement('div');
+
+            this.control.classList.add('bulb__control');
+            this.lighter.classList.add('bulb__lighter');
+
+            this.control.textContent = 'toggle';
+
+            this.target.appendChild(this.lighter);
+            this.target.appendChild(this.control);
+
+            this.target.classList.add('bulb');
+        }
+    }]);
+
+    return Bulb;
+}();
+
+// this.toggle.bind(this) =    () => this.toggle()
+
+/***/ }),
 /* 328 */,
-/* 329 */,
+/* 329 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Select = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(398);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var SELECT_CLASS_NAME = 'select';
+var SELECT_TITLE_CLASS_NAME = SELECT_CLASS_NAME + '__title';
+var SELECT_OPTIONS_CLASS_NAME = SELECT_CLASS_NAME + '__options';
+var SELECT_OPTION_CLASS_NAME = SELECT_CLASS_NAME + '__option';
+var SELECT_CONTROL_CLASS_NAME = SELECT_CLASS_NAME + '__control';
+
+var Select = exports.Select = function () {
+    /**
+     * @param {HTMLElement} target element where we need to render
+     * @param {Array<String>} options Options for drop down menu
+     */
+    function Select(target, options) {
+        _classCallCheck(this, Select);
+
+        this.targeetElement = target;
+        this.options = options;
+    }
+
+    _createClass(Select, [{
+        key: 'render',
+        value: function render() {
+            this.titleElement = document.createElement('button');
+            this.listElement = document.createElement('ul');
+
+            this.titleElement.classList.add(SELECT_TITLE_CLASS_NAME);
+        }
+    }]);
+
+    return Select;
+}();
+
+/***/ }),
 /* 330 */,
 /* 331 */,
 /* 332 */,
@@ -9049,24 +9170,214 @@ module.exports = function (regExp, replace) {
 /* 339 */,
 /* 340 */,
 /* 341 */,
-/* 342 */
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(343);
+module.exports = __webpack_require__(393);
 
 
 /***/ }),
-/* 343 */
+/* 393 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(344);
+__webpack_require__(394);
+
+var _garland = __webpack_require__(395);
+
+__webpack_require__(327);
+
+__webpack_require__(329);
+
+var _bulb = __webpack_require__(327);
+
+var _select = __webpack_require__(329);
+
+//
+// const bulb  = new Bulb(document.querySelector('#bulb1'));
+//
+//
+// const garl = new Garland(document.querySelector('#garland1'));
+
+
+var countries = ['USA', 'UKRAINE', 'MONTENEGROd'];
+
+var countriesList = new _select.Select(document.querySelector());
 
 /***/ }),
-/* 344 */
+/* 394 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 395 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Garland = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _bulb = __webpack_require__(327);
+
+__webpack_require__(397);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Garland = exports.Garland = function () {
+    function Garland(targetElement) {
+        _classCallCheck(this, Garland);
+
+        this.targetEl = targetElement;
+        this.bulbs = [];
+        this.render();
+    }
+
+    _createClass(Garland, [{
+        key: "render",
+        value: function render() {
+
+            this.output = document.createElement('div');
+
+            this.output.classList.add('garland__output');
+
+            this.targetEl.appendChild(this.output);
+
+            this.targetEl.classList.add('garland');
+            this.renderControls();
+        }
+    }, {
+        key: "renderControls",
+        value: function renderControls() {
+            var _this = this;
+
+            this.controlAdd = document.createElement('button');
+            this.controlAdd.classList.add('garland__control');
+            this.controlAdd.textContent = 'Add';
+            this.targetEl.appendChild(this.controlAdd);
+
+            this.controlSwitchOnAll = document.createElement('button');
+            this.controlSwitchOffAll = document.createElement('button');
+
+            this.controlSwitchOffAll.textContent = 'SWITCH OFF';
+            this.controlSwitchOnAll.textContent = 'SWITCH ON';
+
+            this.targetEl.appendChild(this.controlSwitchOffAll);
+            this.targetEl.appendChild(this.controlSwitchOnAll);
+
+            this.controlAdd.addEventListener('click', function () {
+                return _this.add();
+            });
+            this.controlSwitchOffAll.addEventListener('click', function () {
+                return _this.toggleOff();
+            });
+            this.controlSwitchOnAll.addEventListener('click', function () {
+                return _this.toggleOn();
+            });
+        }
+    }, {
+        key: "add",
+        value: function add() {
+
+            var bulbContainer = document.createElement('div');
+
+            var bulb = new _bulb.Bulb(bulbContainer);
+
+            this.bulbs.push(bulb);
+            this.output.appendChild(bulbContainer);
+        }
+    }, {
+        key: "toggleOn",
+        value: function toggleOn() {
+            this.bulbs.forEach(function (bulb) {
+                bulb.switchOn();
+            });
+        }
+    }, {
+        key: "toggleOff",
+        value: function toggleOff() {
+            this.bulbs.forEach(function (bulb) {
+                bulb.switchOff();
+            });
+        }
+    }]);
+
+    return Garland;
+}();
+
+/***/ }),
+/* 396 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 397 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 398 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

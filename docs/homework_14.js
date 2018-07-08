@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 342);
+/******/ 	return __webpack_require__(__webpack_require__.s = 399);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -9049,24 +9049,237 @@ module.exports = function (regExp, replace) {
 /* 339 */,
 /* 340 */,
 /* 341 */,
-/* 342 */
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */,
+/* 349 */,
+/* 350 */,
+/* 351 */,
+/* 352 */,
+/* 353 */,
+/* 354 */,
+/* 355 */,
+/* 356 */,
+/* 357 */,
+/* 358 */,
+/* 359 */,
+/* 360 */,
+/* 361 */,
+/* 362 */,
+/* 363 */,
+/* 364 */,
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */,
+/* 369 */,
+/* 370 */,
+/* 371 */,
+/* 372 */,
+/* 373 */,
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */,
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */,
+/* 382 */,
+/* 383 */,
+/* 384 */,
+/* 385 */,
+/* 386 */,
+/* 387 */,
+/* 388 */,
+/* 389 */,
+/* 390 */,
+/* 391 */,
+/* 392 */,
+/* 393 */,
+/* 394 */,
+/* 395 */,
+/* 396 */,
+/* 397 */,
+/* 398 */,
+/* 399 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(125);
-module.exports = __webpack_require__(343);
+module.exports = __webpack_require__(400);
 
 
 /***/ }),
-/* 343 */
+/* 400 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(344);
+__webpack_require__(401);
+
+var _accordeon = __webpack_require__(402);
+
+var _circle = __webpack_require__(404);
+
+var accordeon = new _accordeon.Accordeon(document.querySelector('#content1'));
+var accordeon2 = new _accordeon.Accordeon(document.querySelector('#content2'));
+var accordeon3 = new _accordeon.Accordeon(document.querySelector('#content3'));
+
+var circle = new _circle.AnimatedCircle(document.querySelector('#animatedCircle'));
 
 /***/ }),
-/* 344 */
+/* 401 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 402 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Accordeon = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(403);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var ACCORDEON_MAIN_CLASS = 'content';
+var ACCORDEON_BUTTON_CLASS = ACCORDEON_MAIN_CLASS + '__btn';
+var ACCORDEON_TEXT_CLASS = ACCORDEON_MAIN_CLASS + '__text';
+var TEXT_CLASS = 'text';
+var ACCORDEON_ACTIVE_CLASS = ACCORDEON_MAIN_CLASS + '_active';
+
+var Accordeon = exports.Accordeon = function () {
+    function Accordeon(targetElement) {
+        _classCallCheck(this, Accordeon);
+
+        this.targetEl = targetElement;
+        this.render();
+        this.toggleActiveClass();
+    }
+
+    _createClass(Accordeon, [{
+        key: 'render',
+        value: function render() {
+            this.button = document.createElement('button');
+            this.button.textContent = 'SECTION 1';
+
+            this.list = document.createElement('div');
+            this.text = document.createElement('p');
+
+            this.text.textContent = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur eius ex exercitationem facere natus, non recusandae rem repudiandae ut. Consectetur doloremque exercitationem explicabo, minus mollitia officiis pariatur veniam. Doloremque, eaque?';
+
+            this.button.classList.add(ACCORDEON_BUTTON_CLASS);
+            this.text.classList.add(TEXT_CLASS);
+            this.list.classList.add(ACCORDEON_TEXT_CLASS);
+            this.targetEl.classList.add(ACCORDEON_MAIN_CLASS);
+
+            this.targetEl.appendChild(this.button);
+            this.targetEl.appendChild(this.list);
+            this.list.appendChild(this.text);
+        }
+    }, {
+        key: 'toggleActiveClass',
+        value: function toggleActiveClass() {
+            var _this = this;
+
+            this.button.addEventListener('click', function () {
+                _this.targetEl.classList.toggle(ACCORDEON_ACTIVE_CLASS);
+            });
+        }
+    }]);
+
+    return Accordeon;
+}();
+
+/***/ }),
+/* 403 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 404 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.AnimatedCircle = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(405);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var AnimatedCircle = exports.AnimatedCircle = function () {
+    function AnimatedCircle(targetElement) {
+        var _this = this;
+
+        _classCallCheck(this, AnimatedCircle);
+
+        this.targetEl = targetElement;
+        document.addEventListener('click', function () {
+            return _this.toggle();
+        });
+        this.enabled = false;
+    }
+
+    _createClass(AnimatedCircle, [{
+        key: 'toggleAnimationOn',
+        value: function toggleAnimationOn() {
+            this.enabled = true;
+            this.targetEl.classList.add('animatedCircle');
+            this.setCoordinates();
+        }
+    }, {
+        key: 'toggleAnimationOff',
+        value: function toggleAnimationOff() {
+            this.enabled = false;
+            this.targetEl.classList.add('circle');
+            this.setCoordinates();
+        }
+    }, {
+        key: 'toggle',
+        value: function toggle() {
+            if (this.enabled) {
+                this.targetEl.classList.remove('animatedCircle');
+                this.toggleAnimationOff();
+            } else {
+                this.targetEl.classList.remove('circle');
+                this.toggleAnimationOn();
+            }
+        }
+    }, {
+        key: 'setCoordinates',
+        value: function setCoordinates() {
+            this.targetEl.style.left = event.clientX - 25 + 'px';
+            this.targetEl.style.top = event.clientY - 25 + 'px';
+        }
+    }]);
+
+    return AnimatedCircle;
+}();
+
+/***/ }),
+/* 405 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
