@@ -1,0 +1,57 @@
+@mixin buttonReset {
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.content {
+  width: 100%;
+  &__btn {
+    @include buttonReset;
+    height: 30px;
+    width: 100%;
+    text-align: left;
+    padding: 0 10px;
+    background-color: #c9c9c9;
+    &::after {
+      content: '+';
+      float: right;
+    }
+    &:hover{
+      background-color: #707070;
+    }
+    &:focus {
+      background-color: #59757e;
+    }
+  }
+  &__text {
+    background-color: #b5eeff;
+    //padding: 10px;
+    overflow: hidden;
+    visibility: hidden;
+    height: 0;
+    transition-duration: .5s;
+    transition-property: all;
+    //transform: scaleY(0);
+    transform-origin: top;
+  }
+  &_active {
+    .content__text {
+      visibility: visible;
+      transition-duration: .5s;
+      height: 100px;
+      }
+    .content__btn {
+      &::after {
+        content: '-';
+        float: right;
+      }
+    }
+  }
+}
+
+.text {
+  padding: 10px;
+}

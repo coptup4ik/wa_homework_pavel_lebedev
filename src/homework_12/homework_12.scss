@@ -11,7 +11,7 @@ $contentWidth: 800px;
   width: $contentWidth;
   height: 300px;
   background-color: #dadada;
-  display: table;
+  display: flex;
   flex-wrap: wrap;
 }
 
@@ -34,16 +34,21 @@ $contentWidth: 800px;
   width: 100px;
   height: 100px;
   margin: 0 5px;
-  &__element {
-    &_active {
+  &_active{
+    .lamp__element{
       background-color: red;
     }
+    .lamp__control {
+      background-color: red;
+    }
+  }
+  &__element {
     width: 75px;
     height: 75px;
     border-radius: 50%;
     background-color: grey;
   }
-  &__button {
+  &__control {
     width: 100px;
     height: 30px;
   }
