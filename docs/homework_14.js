@@ -9126,9 +9126,19 @@ var _accordeon = __webpack_require__(402);
 
 var _circle = __webpack_require__(404);
 
-var accordeon = new _accordeon.Accordeon(document.querySelector('#content1'));
-var accordeon2 = new _accordeon.Accordeon(document.querySelector('#content2'));
-var accordeon3 = new _accordeon.Accordeon(document.querySelector('#content3'));
+var accordeon = new _accordeon.Accordeon(document.querySelector('.content-wrapper'), [{
+    title: 'Секция 1',
+    text: 'текст для первой секции'
+}, {
+    title: 'Секция 2',
+    text: 'текст для второй секции'
+}, {
+    title: 'Секция 3',
+    text: 'текст для третьей секции'
+}]);
+// const accordeon2 = new Accordeon(document.querySelector('#content2'));
+// const accordeon3 = new Accordeon(document.querySelector('#content3'));
+
 
 var circle = new _circle.AnimatedCircle(document.querySelector('#animatedCircle'));
 
@@ -9163,10 +9173,12 @@ var TEXT_CLASS = 'text';
 var ACCORDEON_ACTIVE_CLASS = ACCORDEON_MAIN_CLASS + '_active';
 
 var Accordeon = exports.Accordeon = function () {
-    function Accordeon(targetElement) {
+    function Accordeon(targetElement, array) {
         _classCallCheck(this, Accordeon);
 
         this.targetEl = targetElement;
+        this.array = array;
+        this.contentArray = [];
         this.render();
         this.toggleActiveClass();
     }
@@ -9174,36 +9186,53 @@ var Accordeon = exports.Accordeon = function () {
     _createClass(Accordeon, [{
         key: 'render',
         value: function render() {
+            for (var i = 0; i < this.array.length; i++) {
+                this.createChild();
+                this.createDivContent();
+                this.targetEl.appendChild(this.content);
+                this.button.textContent = this.array[i].title;
+                this.text.textContent = this.array[i].text;
+            }
+        }
+    }, {
+        key: 'createDivContent',
+        value: function createDivContent() {
+            this.content = document.createElement('div');
+            this.content.classList.add(ACCORDEON_MAIN_CLASS);
+            this.content.appendChild(this.button);
+            this.content.appendChild(this.list);
+            this.contentArray.push(this.content);
+        }
+    }, {
+        key: 'createChild',
+        value: function createChild() {
             this.button = document.createElement('button');
-            this.button.textContent = 'SECTION 1';
 
             this.list = document.createElement('div');
             this.text = document.createElement('p');
 
-            this.text.textContent = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur eius ex exercitationem facere natus, non recusandae rem repudiandae ut. Consectetur doloremque exercitationem explicabo, minus mollitia officiis pariatur veniam. Doloremque, eaque?';
-
             this.button.classList.add(ACCORDEON_BUTTON_CLASS);
             this.text.classList.add(TEXT_CLASS);
             this.list.classList.add(ACCORDEON_TEXT_CLASS);
-            this.targetEl.classList.add(ACCORDEON_MAIN_CLASS);
-
-            this.targetEl.appendChild(this.button);
-            this.targetEl.appendChild(this.list);
             this.list.appendChild(this.text);
         }
     }, {
         key: 'toggleActiveClass',
         value: function toggleActiveClass() {
-            var _this = this;
-
-            this.button.addEventListener('click', function () {
-                _this.targetEl.classList.toggle(ACCORDEON_ACTIVE_CLASS);
+            this.contentArray.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    item.classList.toggle(ACCORDEON_ACTIVE_CLASS);
+                });
             });
         }
     }]);
 
     return Accordeon;
 }();
+
+// this.button.addEventListener('click', () => {
+//     this.content.classList.toggle(ACCORDEON_ACTIVE_CLASS);
+// })
 
 /***/ }),
 /* 403 */

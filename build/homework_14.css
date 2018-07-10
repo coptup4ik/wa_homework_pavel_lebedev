@@ -20,7 +20,7 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 300px;
   -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%); }
 .content {
@@ -38,7 +38,8 @@ a {
     background-color: #c9c9c9; }
     .content__btn::after {
       content: '+';
-      float: right; }
+      float: right;
+      transition-duration: .5s; }
     .content__btn:hover {
       background-color: #707070; }
     .content__btn:focus {
@@ -57,8 +58,13 @@ a {
     transition-duration: .5s;
     height: 100px; }
   .content_active .content__btn::after {
-    content: '-';
-    float: right; }
+    transition-duration: .5s;
+    color: white;
+    content: '=';
+    -ms-transform: rotate(180deg) scale(2);
+        transform: rotate(180deg) scale(2);
+    float: right;
+    opacity: .7; }
 
 .text {
   padding: 10px; }
