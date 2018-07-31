@@ -10,21 +10,28 @@ const baseConf = (_path) => {
     const VENDORS_NAME = 'vendors';
     const entry = {
         index: ['babel-polyfill', './src/index/index.js'],
-        lesson_6: ['babel-polyfill', './src/lesson_6/lesson_6.js'],
-        homework_1: ['babel-polyfill', './src/homework_1/homework_1.js'],
-        lesson_7: ['babel-polyfill', './src/lesson_7/lesson_7.js'],
-        homework_8: ['babel-polyfill', './src/homework_8/homework_8.js'],
-        lesson_9: ['babel-polyfill', './src/lesson_9/lesson_9.js'],
-        homework_9: ['babel-polyfill', './src/homework_9/homework_9.js'],
-        lesson_10: ['babel-polyfill', './src/lesson_10/lesson_10.js'],
-        homework_10: ['babel-polyfill', './src/homework_10/homework_10.js'],
-        lesson_11: ['babel-polyfill', './src/lesson_11/lesson_11.js'],
-        homework_11: ['babel-polyfill', './src/homework_11/homework_11.js'],
-        lesson_12: ['babel-polyfill', './src/lesson_12/lesson_12.js'],
-        homework_12: ['babel-polyfill', './src/homework_12/homework_12.js'],
-        lesson_13: ['babel-polyfill', './src/lesson_13/lesson_13.js'],
-        lesson_14: ['babel-polyfill', './src/lesson_14/lesson_14.js'],
-        homework_14: ['babel-polyfill', './src/homework_14/homework_14.js'],
+        // lesson_6: ['babel-polyfill', './src/lesson_6/lesson_6.js'],
+        // homework_1: ['babel-polyfill', './src/homework_1/homework_1.js'],
+        // lesson_7: ['babel-polyfill', './src/lesson_7/lesson_7.js'],
+        // homework_8: ['babel-polyfill', './src/homework_8/homework_8.js'],
+        // lesson_9: ['babel-polyfill', './src/lesson_9/lesson_9.js'],
+        // homework_9: ['babel-polyfill', './src/homework_9/homework_9.js'],
+        // lesson_10: ['babel-polyfill', './src/lesson_10/lesson_10.js'],
+        // homework_10: ['babel-polyfill', './src/homework_10/homework_10.js'],
+        // lesson_11: ['babel-polyfill', './src/lesson_11/lesson_11.js'],
+        // homework_11: ['babel-polyfill', './src/homework_11/homework_11.js'],
+        // lesson_12: ['babel-polyfill', './src/lesson_12/lesson_12.js'],
+        // homework_12: ['babel-polyfill', './src/homework_12/homework_12.js'],
+        // lesson_13: ['babel-polyfill', './src/lesson_13/lesson_13.js'],
+        // lesson_14: ['babel-polyfill', './src/lesson_14/lesson_14.js'],
+        // homework_14: ['babel-polyfill', './src/homework_14/homework_14.js'],
+        // lesson_15: ['babel-polyfill', './src/lesson_15/lesson_15.js'],
+        // homework_15: ['babel-polyfill', './src/homework_15/homework_15.js'],
+        // lesson_16: ['babel-polyfill', './src/lesson_16/lesson_16.js'],
+        // lesson_17: ['babel-polyfill', './src/lesson_17/lesson_17.js'],
+        graduation: ['babel-polyfill', './src/graduation/index.js']
+
+
 
 
     };

@@ -1,0 +1,18 @@
+.comments-box{
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+  }
+  &__textarea{
+    resize: none;
+  }
+  &__btn{
+    background-color: #0a8aff;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+  }
+
+}
