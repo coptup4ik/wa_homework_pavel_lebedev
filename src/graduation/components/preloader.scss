@@ -2,22 +2,45 @@
   width: 340px;
 }
 
+.left {
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.right {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  width: 100%;
+}
+
 .preloader {
   position: fixed;
-  background-color: #f3d9aa;
   width: 100%;
   height: 100%;
   opacity: 1;
   transition: all;
   transition-duration: 1s;
   visibility: visible;
+  &__left-delay {
+    animation: 1s gridAnimationLeft forwards ease-in-out;
+    transform: translateX(0);
+  }
+  &__right-delay {
+    animation: 1s gridAnimationRight forwards ease-in-out;
+    transform: translateX(0);
+    transform-origin: right;
+  }
 
   &.done {
-    transition-duration: 1s;
+    transition-duration: 2s;
     opacity: 0;
     visibility: hidden;
   }
-  .loader{
+
+  .loader {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,7 +48,21 @@
     animation: 2s preloaderAnimation ease-in-out forwards;
   }
 
+  &__left {
+    width: 50%;
+    background-color: #f3d9aa;
+    content: '';
+    height: 20%;
 
+  }
+  &__right {
+    width: 50%;
+    background-color: #f3d9aa;
+    content: '';
+    height: 20%;
+    //transform: translateX(100%);
+
+  }
 }
 
 @keyframes preloaderAnimation {
@@ -33,7 +70,25 @@
     transform: translate(-50%, 100vh);
   }
 
-  to  {
+  to {
     transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes gridAnimationLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes gridAnimationRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
   }
 }

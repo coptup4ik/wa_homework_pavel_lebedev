@@ -9074,6 +9074,8 @@ var _animejs2 = _interopRequireDefault(_animejs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var delay = 100;
+
 var lineDrawing = (0, _animejs2.default)({
     targets: '#lineDrawing .lines path',
     strokeDashoffset: [_animejs2.default.setDashoffset, 0],
@@ -9086,12 +9088,25 @@ var lineDrawing = (0, _animejs2.default)({
     loop: true
 });
 
+var preloaderLeft = document.querySelectorAll('.preloader__left');
+var preloaderRight = document.querySelectorAll('.preloader__right');
+
 document.body.onload = function () {
     setTimeout(function () {
         var preloader = document.querySelector('.preloader');
         if (!preloader.classList.contains('done')) {
             preloader.classList.add('done');
         }
+        preloaderLeft.forEach(function (value, currentIndex) {
+            setTimeout(function () {
+                preloaderLeft[currentIndex].classList.add('preloader__left-delay');
+            }, delay * currentIndex);
+        });
+        preloaderRight.forEach(function (value, currentIndex) {
+            setTimeout(function () {
+                preloaderRight[currentIndex].classList.add('preloader__right-delay');
+            }, delay * currentIndex);
+        });
     }, 3000);
 };
 
