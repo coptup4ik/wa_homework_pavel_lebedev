@@ -1,10 +1,27 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+
+$bannerTopHeight:40px;
+
+
 .header {
-  &__banner-top{
+  &_nav{
+    margin: 0 auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
-    height: 40px;
+    @include padding;
+    height: 80px;
+    background-color: #ffcb76;
+    @include laptop {
+      padding: 0 75px;
+    }
+  }
+  &__banner-top{
+    overflow: hidden;
+    width: 100%;
+    height: $bannerTopHeight;
     background-color: #33333a;
 
   }
@@ -12,10 +29,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
-    height: 80px;
-    background-color: #ffffff;
+    &_nav{
+      display: flex;
+      @include tablet{
+        display: none;
+      }
+    }
+
+    &_hamburger{
+      display: none;
+      @include tablet{
+        display: block;
+      }
+    }
     &_logo{
       padding-right: 40px;
     }
@@ -24,9 +50,7 @@
       align-items: center;
       outline: 1px solid rebeccapurple;
     }
-    &_nav{
-      display: flex;
-    }
+
     &_item{
       padding: 0 5px;
       display: flex;
@@ -39,6 +63,7 @@
     &_user{
       display: flex;
       align-items: center;
+      outline: 1px solid rebeccapurple;
 
     }
     &_avatar {
@@ -47,14 +72,34 @@
       border-radius: 50%;
     }
     &_icon{
-      padding: 0 40px;
+      padding-left: 40px;
     }
+
+    &_welcome{
+      display: flex;
+      align-items: center;
+      padding: 5px;
+    }
+
   }
 
 }
 
 .banner-top{
+  &_wrapper {
+    margin: 0 auto;
+    width: 300px;
+    height:$bannerTopHeight*3;
+    transform: translateY(0);
+    transition-property: all;
+    transition-duration: 1s;
+  }
   &__text {
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height:$bannerTopHeight;
   }
 }

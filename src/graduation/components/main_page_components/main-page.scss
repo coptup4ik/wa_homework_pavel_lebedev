@@ -1,10 +1,9 @@
-$mainPageWidth : 1440px;
-$mainPageMinWidth : 350px;
+@import "../variables.scss";
 
 #main-page {
   max-width: $mainPageWidth;
   min-width: $mainPageMinWidth;
-  //background-color: #801300;
-  background-color: #ffffff;
+  background-color: #801300;
+  //background-color: #ffffff;
   margin: 0 auto;
 }
