@@ -24,6 +24,8 @@
   transition: all;
   transition-duration: 1s;
   visibility: visible;
+  z-index: 999;
+
   &__left-delay {
     animation: 1s gridAnimationLeft forwards ease-in-out;
     transform: translateX(0);
@@ -41,12 +43,22 @@
   }
 
   .loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: 2s preloaderAnimation ease-in-out forwards;
+    &__text{
+      margin-top: -50px;
+      font-size: 36px;
+      font-weight: lighter;
+      margin-right: 25px;
+    }
   }
+
 
   &__left {
     width: 50%;

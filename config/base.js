@@ -29,7 +29,8 @@ const baseConf = (_path) => {
         // homework_15: ['babel-polyfill', './src/homework_15/homework_15.js'],
         // lesson_16: ['babel-polyfill', './src/lesson_16/lesson_16.js'],
         // lesson_17: ['babel-polyfill', './src/lesson_17/lesson_17.js'],
-        graduation: ['babel-polyfill', './src/graduation/index.js']
+        graduation: ['babel-polyfill', './src/graduation/index.js'],
+        react_tutor: ['babel-polyfill', './src/react_tutor/react_tutor.js']
 
 
 

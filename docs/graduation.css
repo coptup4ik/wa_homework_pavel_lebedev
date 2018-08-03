@@ -20,7 +20,8 @@
   opacity: 1;
   transition: all;
   transition-duration: 1s;
-  visibility: visible; }
+  visibility: visible;
+  z-index: 999; }
   .preloader__left-delay {
     animation: 1s gridAnimationLeft forwards ease-in-out;
     -ms-transform: translateX(0);
@@ -36,12 +37,23 @@
     opacity: 0;
     visibility: hidden; }
   .preloader .loader {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
     position: absolute;
     top: 50%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
     animation: 2s preloaderAnimation ease-in-out forwards; }
+    .preloader .loader__text {
+      margin-top: -50px;
+      font-size: 36px;
+      font-weight: lighter;
+      margin-right: 25px; }
   .preloader__left {
     width: 50%;
     background-color: #f3d9aa;
@@ -77,6 +89,67 @@
 html {
   font-size: 12px; }
 
-body {
+body, ul, li, img, i {
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  z-index: 0; }
+.header__banner-top {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 100%;
+  height: 40px;
+  background-color: #33333a; }
+
+.header__menu {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  height: 80px;
+  background-color: #ffffff; }
+  .header__menu_logo {
+    padding-right: 40px; }
+  .header__menu_categories {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    outline: 1px solid rebeccapurple; }
+  .header__menu_nav {
+    display: -ms-flexbox;
+    display: flex; }
+  .header__menu_item {
+    padding: 0 5px;
+    display: -ms-flexbox;
+    display: flex; }
+  .header__menu_item:hover {
+    color: #ff5e1b; }
+  .header__menu_user {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+  .header__menu_avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; }
+  .header__menu_icon {
+    padding: 0 40px; }
+
+.banner-top__text {
+  color: white; }
+#main-page {
+  max-width: 1440px;
+  min-width: 350px;
+  background-color: #ffffff;
+  margin: 0 auto; }

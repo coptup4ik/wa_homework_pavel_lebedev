@@ -1,4 +1,4 @@
-@import "./components/preloader";
+@import "components/preloader/preloader";
 
 * {
   box-sizing: border-box;
@@ -8,9 +8,12 @@ html {
   font-size: 12px;
 }
 
-body {
+body, ul, li, img, i{
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+  z-index: 0;
 }
 
 

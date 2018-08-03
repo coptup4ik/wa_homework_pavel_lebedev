@@ -1,0 +1,60 @@
+.header {
+  &__banner-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background-color: #33333a;
+
+  }
+  &__menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    height: 80px;
+    background-color: #ffffff;
+    &_logo{
+      padding-right: 40px;
+    }
+    &_categories{
+      display: flex;
+      align-items: center;
+      outline: 1px solid rebeccapurple;
+    }
+    &_nav{
+      display: flex;
+    }
+    &_item{
+      padding: 0 5px;
+      display: flex;
+    }
+
+    &_item:hover{
+      color:#ff5e1b;
+
+    }
+    &_user{
+      display: flex;
+      align-items: center;
+
+    }
+    &_avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    &_icon{
+      padding: 0 40px;
+    }
+  }
+
+}
+
+.banner-top{
+  &__text {
+    color: white;
+  }
+}

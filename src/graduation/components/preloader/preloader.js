@@ -35,6 +35,4 @@ document.body.onload = function () {
             }, delay * currentIndex);
         });
     }, 3000);
-
-
 };
