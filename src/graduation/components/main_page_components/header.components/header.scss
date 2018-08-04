@@ -1,0 +1,150 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+
+$bannerTopHeight:40px;
+
+
+.header {
+  overflow: hidden;
+  &__banner-top {
+    overflow: hidden;
+    width: 100%;
+    height: $bannerTopHeight;
+    background-color: #33333a;
+
+  }
+  &-menu {
+    height: 80px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
+    padding: 0 150px;
+    display: flex;
+    justify-content: space-between;
+    @include tablet {
+      padding: 0 100px;
+    }
+    @include mobile{
+      padding: 0 5px;
+    }
+    &__categories{
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    &__logo{
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    &__hamburger{
+      display: none;
+      @include tablet{
+        font-size: 15px;
+        display: inline-block;
+        padding-right: 25px;
+        margin-bottom: 4px;
+      }
+    }
+    &__nav {
+      display: flex;
+      padding: 0 10px;
+      @include tablet{
+        display: none;
+      }
+    }
+    &__item {
+      display: flex;
+      padding: 0 5px;
+      &:hover{
+        color: red;
+        cursor: pointer;
+      }
+    }
+    &__user{
+      display: flex;
+      align-items: center;
+    }
+    &__login{
+      display: flex;
+      align-items: center;
+    }
+    &__username{
+      padding: 0 5px;
+    }
+    &__avatar{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+    &__icon {
+      font-size: 20px;
+      padding-left: 40px;
+      @include mobile{
+        display: none;
+      }
+    }
+  }
+  &-banner {
+    width: 100%;
+    height: 600px;
+    @include mobile{
+      height: 400px;
+    }
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    &__image{
+      margin-right:150px;
+      height: 100%;
+      @include tablet{
+        margin-right:75px;
+      }
+      @include xs-mobile{
+        margin-right:-60px;
+      }
+    }
+    &__text{
+      position: absolute;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      left: 50%;
+      top: 50%;
+      z-index: 2;
+      @include mobile{
+        transform: translate(-102%, -50%)
+      }
+      &_head {
+        font-size: 60px;
+        line-height: 1.5;
+      }
+      &_item{
+        font-size: 20px;
+      }
+    }
+  }
+
+}
+
+
+.banner-top{
+  &_wrapper {
+    margin: 0 auto;
+    width: 300px;
+    height:$bannerTopHeight*3;
+    transform: translateY(0);
+    transition-property: all;
+    transition-duration: 1s;
+  }
+  &__text {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height:$bannerTopHeight;
+  }
+}
