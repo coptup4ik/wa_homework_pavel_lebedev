@@ -21,12 +21,7 @@ $bannerTopHeight:40px;
     padding: 0 150px;
     display: flex;
     justify-content: space-between;
-    @include tablet {
-      padding: 0 100px;
-    }
-    @include mobile{
-      padding: 0 5px;
-    }
+    @include padding;
     &__categories{
       height: 100%;
       display: flex;
