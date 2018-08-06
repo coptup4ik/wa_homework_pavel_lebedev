@@ -75,23 +75,6 @@ class BannerTop extends React.Component{
 
 }
 
-//
-// render() {
-//     Ajax.get('http://5b61f14407412d00142acf14.mockapi.io/topBannerData');
-//     const makeTopBannerText = (value) => {
-//         return <div className="banner-top__text" key={value}>{topBannerData[value].bannerdata}</div>;
-//
-//     };
-//     return (
-//         <div className="header__banner-top">
-//             <div className="banner-top_wrapper" style={{height:`40*${topBannerData.length}`}}>
-//                 {_.range(0, topBannerData.length).map(makeTopBannerText)}
-//             </div>
-//         </div>
-//     )
-// }
-
-
 function Menu() {
     return(
         <div className="header-menu">

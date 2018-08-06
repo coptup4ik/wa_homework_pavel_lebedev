@@ -1,0 +1,19 @@
+.goods-items{
+  width: 880px;
+  background-color: #0a8aff;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  &__block{
+    width: 260px;
+    height: 500px;
+    background-color: #1E2C33;
+    margin: 15px 15px 15px 15px;
+  }
+}

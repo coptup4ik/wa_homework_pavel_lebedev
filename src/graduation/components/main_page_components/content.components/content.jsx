@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './content.scss';
 import * as _ from 'underscore';
+import {GoodsItems} from "./goodsItems.component.jsx";
 
 
 
@@ -39,6 +40,7 @@ export class Content extends React.Component{
                     <BreadCrumbs />
                     <SortBy />
                 </div>
+                <GoodsItems />
             </div>
         );
     }
