@@ -82,7 +82,7 @@ function Menu() {
                 <i className="fas fa-bars header-menu__hamburger"></i>
                 <div className="header-menu__logo">
 
-                    <img src="../../assets/images/matter_main_page_logo.svg" alt=""/>
+                    <img src="http://bybnilka.com.ua/data/images/matter_main_page_logo.svg" alt=""/>
                 </div>
 
                 <div className="header-menu__nav">
@@ -107,7 +107,7 @@ function Menu() {
             <div className="header-menu__user">
                 <div className="header-menu__login">
                     <span className="header-menu__username">WELCOME, ALEX</span>
-                    <img className="header-menu__avatar" src="../../assets/images/avatar.jpg" alt=""/>
+                    <img className="header-menu__avatar" src="http://bybnilka.com.ua/data/images/avatar.jpg" alt=""/>
                 </div>
 
                 <div className="header-menu__search ">
@@ -134,7 +134,7 @@ function Banner() {
                 <h2 className="header-banner__text_head" >Pants</h2>
                 <h3 className="header-banner__text_item" >Apparels</h3>
             </div>
-            <img src="https://raw.githubusercontent.com/coptup4ik/wa_homework_pavel_lebedev/master/docs/assets/images/graduation_images/picture_01.jpg" alt="" className="header-banner__image"/>
+            <img src="http://bybnilka.com.ua/data/images/picture_01.jpg" alt="" className="header-banner__image"/>
         </div>
     )
 }

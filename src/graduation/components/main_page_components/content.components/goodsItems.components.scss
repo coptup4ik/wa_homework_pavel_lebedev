@@ -1,6 +1,9 @@
+@import "../../mixins.scss";
+@import "../../variables.scss";
+
+
 .goods-items{
   width: 880px;
-  background-color: #0a8aff;
   padding-top: 40px;
   display: flex;
   flex-direction: column;
@@ -8,12 +11,78 @@
   &__wrapper{
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    //justify-content: flex-start;
   }
   &__block{
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.10);
     width: 260px;
-    height: 500px;
-    background-color: #1E2C33;
-    margin: 15px 15px 15px 15px;
+    flex-basis: 28%;
+    background-color: white;
+    margin: 15px 25px 15px 0px;
+    position: relative;
+    @include tablet{
+      flex-basis: 43%;
+    }
+    @include mobile{
+      flex-basis: 38%;
+    }
+    @include xs-mobile{
+      flex-basis: 100%;
+      margin: 15px 0px 15px 0px;
+      width: 240px;
+    }
+  }
+  &__tag{
+    position: absolute;
+    top: 3%;
+    left: 7%;
+    background-color: #ff5d1d;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    @include mobile{
+      padding: 3px 5px;
+    }
+    @include xs-mobile{
+      padding: 5px 10px;
+    }
+  }
+  &__image{
+    width: 100%;
+    vertical-align: middle;
+  }
+  &__header{
+    background-color: white;
+    padding: 10px 0;
+    &_text{
+      font-size: 16px;
+    }
+  }
+  &__price{
+    background-color: white;
+    padding: 5px 0;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &_btn{
+      background-color: #33333a;
+      color: #e1e1e1;
+      border: none;
+      padding: 5px;
+      @include mobile{
+        font-size: 8px;
+      }
+      @include mobile{
+        font-size: 12px;
+      }
+    }
+  }
+  &__load{
+    padding: 15px 20px;
+    background-color: #ff5d1d;
+    margin: 15px 0;
+    color: white;
+    border:none;
   }
 }
