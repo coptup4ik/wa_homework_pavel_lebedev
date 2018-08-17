@@ -56,16 +56,22 @@ export class Categories extends React.Component {
         return (
             <Accordion  accordion={false} >
                 {_.range(0, this.state.response.length).map((value)=>{
-                    return( <AccordionItem >
-                        <AccordionItemTitle key={value}><span key={value}>{this.state.response[value].category}</span></AccordionItemTitle>
+                    return( <AccordionItem key={value}>
+                        <AccordionItemTitle key={value}>
+                            <span key={value} className="u-position-relative">{this.state.response[value].category}
+                            <div className="accordion__arrow" role="presentation"></div></span>
+                        </AccordionItemTitle>
                         <AccordionItemBody>
                             {_.range(0, this.state.response[value].subcategory.length).map((data)=>{
                                 return(
-                                <AccordionItem>
-                                    <AccordionItemTitle><span>{this.state.response[value].subcategory[data]}</span></AccordionItemTitle>
+                                <AccordionItem key={data}>
+                                    <AccordionItemTitle>
+                                        <span className="u-position-relative">{this.state.response[value].subcategory[data]}
+                                            <div className="accordion__arrow" role="presentation"></div></span>
+                                    </AccordionItemTitle>
                                     <AccordionItemBody>
                                         {_.range(0, this.state.response[value].subcategoryData[data].length).map((key)=>{
-                                            return (<div>{this.state.response[value].subcategoryData[data][key]}</div>)
+                                            return (<div key={key} className="accordion__body-item">{this.state.response[value].subcategoryData[data][key]}</div>)
                                         })}
                                     </AccordionItemBody>
                                 </AccordionItem>)

@@ -1,0 +1,318 @@
+@import "../../mixins.scss";
+
+.portal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1, 1);
+  z-index: 15;
+  width: 100%;
+  @include xs-mobile{
+    overflow-y: scroll;
+    max-height: 500px;
+  }
+  &::-webkit-scrollbar{
+    width: 0;
+    background-color: transparent;
+  }
+}
+
+@mixin modal {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+  min-width: 320px;
+  background-color: #f7f7f7;
+  transform:scale(1, 1);
+  transform-origin: center center;
+  z-index: 15;
+}
+
+
+.modal{
+  display: none;
+  &_active {
+    @include modal;
+    animation: openModal .5s ease-in-out forwards;
+  }
+  &_closed{
+    @include modal;
+    animation: closeModal .5s ease-in-out forwards;
+  }
+  &__wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__header{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #efefef;
+  }
+  &__closebtn{
+    font-size: 50px;
+    background-color: transparent;
+    color: #3b3b3b;
+    border: none;
+    transform: rotate(45deg);
+    line-height: .5;
+    &:focus{
+      outline: none;
+      transition-duration: .5s;
+      transform: rotate(180deg)
+    }
+  }
+  &__content{
+    display: flex;
+    padding: 15px;
+    width: 100%;
+    justify-content: space-between;
+    @include mobile{
+      flex-wrap: wrap;
+    }
+  }
+  &__photos{
+    max-height: 450px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    //justify-content: space-between;
+    @include mobile{
+      width: 100%;
+      flex-direction: row;
+    }
+    &_el{
+      padding: 5px;
+      //margin-bottom: 5px;
+      width: 45px;
+      height: 45px;
+      overflow: hidden;
+    }
+    &_img{
+      width: 100%;
+    }
+  }
+  &__mainphoto{
+    padding: 5px;
+    max-width: 450px;
+    flex-basis: 35%;
+    @include xs-mobile{
+      flex-basis: 100%;
+    }
+    &_img {
+      //height: 100%;
+      width: 100%;
+      vertical-align: middle;
+    }
+  }
+  &__description{
+    padding: 0 15px;
+    flex-basis: 50%;
+    @include mobile{
+      flex-basis: 65%;
+    }
+    @include xs-mobile{
+      flex-basis: 100%;
+    }
+  }
+  &__describe{
+    width: 100%;
+    padding: 5px 0;
+    border-top: 1px solid ;
+    border-bottom: 1px solid ;
+    border-color:  rgba(0, 0, 0, 0.15);
+
+
+    &_title{
+      font-size: 18px;
+      color: #030303;
+      padding: 5px 0;
+    }
+    &_text{
+      font-size: 16px;
+      max-height: 20px;
+      overflow: hidden;
+      color: grey;
+      &:hover{
+        max-height: 100px;
+        transition-duration: .2s;
+      }
+    }
+  }
+  &__title{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 18px;
+    color: #030303;
+  }
+  &__rate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    &_price{
+      color: #ff6008;
+      font-size: 16px;
+    }
+    &_stars{
+      font-size: 16px;
+      color: #585858;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__partners{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid ;
+    border-color:  rgba(0, 0, 0, 0.15);
+    &_text{
+      width: 50%;
+      font-size: 14px;
+      color: #030303;
+    }
+  }
+  &__partner{
+    width: 50%;
+    font-size: 16px;
+    color: #585858;
+  }
+
+  &__select{
+    width: 100%;
+    padding: 15px 0;
+    &_text{
+      font-size: 16px;
+      color: #030303;
+    }
+    &_chart{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+    }
+    &_btn{
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border: none;
+      margin-right:10px;
+      font-size: 16px;
+      position: relative;
+      text-align: center;
+      @include mobile{
+        width: 30px;
+        height: 30px;
+        margin-right:10px;
+        font-size: 14px;
+      }
+      &:hover{
+        background-color: #9a9a9a;
+      }
+      &:hover:after{
+        top: 100%;
+        left: 0;
+        position: absolute;
+        content: "Model is a US Size 2-4, wears Matter Size 1. 175 cm tall.";
+        width: 200px;
+        color: #d4d4d4;
+        font-size: 10px;
+        text-align: left;
+      }
+      &:focus{
+        outline: none;
+      }
+    }
+    &_counter{
+      outline: 1px solid grey;
+      display: flex;
+      align-items: center;
+    }
+    &_quantity{
+      width: 30px;
+      height: 30px;
+      background-color: #cbcbcb;
+      border: none;
+      font-size: 16px;
+      position: relative;
+      text-align: center;
+      @include mobile{
+        font-size: 12px;
+        width: 25px;
+        height: 25px;
+      }
+    }
+    &_data {
+      width: 30px;
+      font-size: 16px;
+      text-align: center;
+    }
+    &_wishlist{
+      align-items: center;
+      display: flex;
+    }
+    &_icon{
+      font-size: 24px;
+    }
+    &_list{
+      border-bottom: 1px solid grey;
+      padding: 5px;
+      font-size: 10px;
+    }
+  }
+
+  &__btn_details{
+    background-color: #33333a;
+    color: white;
+    //font-size: 20px;
+    padding: 8px 15px;
+    //margin: 25px 0;
+    border: none;
+    @include mobile{
+      font-size: 10px;
+    }
+    @include xs-mobile{
+      font-size: 8px;
+    }
+  }
+}
+
+@keyframes openModal {
+  0%{
+    display: none;
+    transform:scale(0, 0);
+  }
+  1%{
+    display: block;
+    transform:scale(0, 0);
+  }
+  50%{
+    transform: scale(1, 0)
+  }
+  100% {
+    transform:scale(1, 1)
+  }
+}
+
+@keyframes closeModal {
+  0%{
+    transform:scale(1, 1);
+  }
+  50%{
+    transform:scale(1, 0)
+  }
+  99%{
+    display: none;
+  }
+  100%{
+    transform:scale(0, 0)
+  }
+}

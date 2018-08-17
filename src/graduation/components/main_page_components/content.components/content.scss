@@ -72,12 +72,12 @@
     padding-right: 15px;
   }
   &__select{
-    width: 150px;
-    height: 40px;
+    //width: 150px;
+    //height: 40px;
     color: grey;
 
     @include xs-mobile{
-      width: 75px;
+      //width: 75px;
     }
   }
 

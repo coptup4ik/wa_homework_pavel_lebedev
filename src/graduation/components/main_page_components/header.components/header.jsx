@@ -2,11 +2,13 @@ import * as React from 'react';
 import './header.scss'
 import * as _ from 'underscore'
 import {Ajax} from "../../../utils/ajax.js";
+import {BrowserRouter, Route,NavLink ,Switch } from 'react-router-dom';
 
 
+import addToBasket from "../content.components/product.jsx";
+import {Basket} from "../content.components/product.jsx";
 
-
-class BannerTop extends React.Component{
+export class BannerTop extends React.Component{
     constructor(){
         super();
         this.state = {
@@ -14,8 +16,8 @@ class BannerTop extends React.Component{
                 {bannerdata:'Loading...'}
                 ]
         };
-
     }
+
 
 
     bannerTopAnimation() {
@@ -75,17 +77,27 @@ class BannerTop extends React.Component{
 
 }
 
-function Menu() {
+export class Menu extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isOpen:false
+        }
+
+    }
+
+    render() {
     return(
         <div className="header-menu">
             <div className="header-menu__categories">
-                <i className="fas fa-bars header-menu__hamburger"></i>
+                <i className="fas fa-bars header-menu__hamburger" onClick={()=>this.setState({
+                    isOpen:!this.state.isOpen
+                })}></i>
                 <div className="header-menu__logo">
-
                     <img src="http://bybnilka.com.ua/data/images/matter_main_page_logo.svg" alt=""/>
                 </div>
 
-                <div className="header-menu__nav">
+                <div className={this.state.isOpen === false ? "header-menu__nav" : "header-menu__nav header-menu__nav_active"}>
                     <ul className="header-menu__item header-menu__shop">
                         SHOP<i className="fas fa-chevron-up" style={{fontSize:"10px", padding:"0 3px"}}></i>
 
@@ -116,13 +128,12 @@ function Menu() {
                 <div className="header-menu__like ">
                     <i className="far fa-heart header-menu__icon"></i>
                 </div>
-                <div className="header-menu__basket">
-                    <i className="fas fa-shopping-bag header-menu__icon"></i>
-                </div>
+                <Basket/>
             </div>
 
         </div>
     )
+    }
 }
 
 

@@ -1,0 +1,45 @@
+.basket-page{
+  width: 100%;
+  padding: 25px;
+  &__product{
+    position: relative;
+    width: 100%;
+    background-color: #f7f7f7;
+    margin: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  &__nav{
+    display: flex;
+    justify-content: space-between;
+    &_btn{
+      padding: 5px 10px;
+      background-color: #1E2C33;
+      border: none;
+      color: white;
+    }
+  }
+  &__photo{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    &_img{
+      width: 100%;
+    }
+  }
+  &__del{
+    font-size: 35px;
+    line-height: .5;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    transform: rotate(45deg);
+    &:focus{
+      outline: none;
+    }
+  }
+}

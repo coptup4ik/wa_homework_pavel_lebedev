@@ -48,8 +48,11 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) translateZ(1px);
     animation: 2s preloaderAnimation ease-in-out forwards;
+    opacity: 0;
+    animation-delay: .5s;
+    transition-delay: .5s;
     &__text{
       color: white;
       margin-top: -50px;
@@ -58,9 +61,13 @@
       margin-right: 25px;
     }
     &.done {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) translateZ(1px);
       transition-duration: .5s;
       opacity: 0;
       visibility: hidden;
+      animation: 1s loaderOpacity forwards ;
     }
   }
 
@@ -84,13 +91,19 @@
 }
 
 @keyframes preloaderAnimation {
-  from {
-    transform: translate(-50%, 100vh);
+  0% {
+    transform: translate(-50%, 100vh) translateZ(1px);
+    opacity: 0;
   }
-
-  to {
-
-    transform: translate(-50%, -50%);
+  5%{
+    opacity: 1;
+  }
+  20%{
+    transform: translate(-50%, 100vh) translateZ(1px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateZ(1px);
   }
 }
 
@@ -113,3 +126,15 @@
     transform: translateX(110%);
   }
 }
+
+
+@keyframes loaderOpacity {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+

@@ -7,6 +7,7 @@ $bannerTopHeight:40px;
 
 .header {
   overflow: hidden;
+  position: relative;
   &__banner-top {
     overflow: hidden;
     width: 100%;
@@ -15,6 +16,20 @@ $bannerTopHeight:40px;
 
   }
   &-menu {
+    &_basket {
+      position: absolute;
+      padding: 3px;
+      top: 0;
+      right: -10px;
+      background-color: orangered;
+      text-align: center;
+      line-height: .5;
+      font-size: 10px;
+      color: white;
+      border-radius: 50%;
+      border: 1px solid #ff9741;
+    }
+
     height: 80px;
     background-color: #ffffff;
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1);
@@ -26,6 +41,7 @@ $bannerTopHeight:40px;
       height: 100%;
       display: flex;
       align-items: center;
+      position: relative;
     }
     &__logo{
       display: flex;
@@ -46,7 +62,24 @@ $bannerTopHeight:40px;
       padding: 0 10px;
       @include tablet{
         display: none;
+
       }
+    }
+    &__nav_active{
+      @include tablet{
+        animation: .35s openMenu forwards;
+        display: flex;
+        justify-content: space-around;
+        //width: 50%;
+        position: absolute;
+        top: 55px;
+        //left: 0;
+        z-index: 20;
+        transform: scaleX(1);
+        transition-property:all;
+        transition-duration: .35s;
+      }
+
     }
     &__item {
       display: flex;
@@ -75,9 +108,11 @@ $bannerTopHeight:40px;
     &__icon {
       font-size: 20px;
       padding-left: 40px;
+      position: relative;
       @include mobile{
         display: none;
       }
+
     }
   }
   &-banner {
@@ -141,5 +176,17 @@ $bannerTopHeight:40px;
     justify-content: center;
     text-align: center;
     height:$bannerTopHeight;
+  }
+}
+
+
+@keyframes openMenu {
+  from{
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to{
+    transform: scaleX(1);
+    transform-origin: left;
   }
 }

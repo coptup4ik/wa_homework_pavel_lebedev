@@ -4,13 +4,18 @@ import * as React from "react";
 import * as _ from 'underscore'
 
 
-
-
 class Preloader extends React.Component{
     constructor(){
         super();
         this.divInitialValue = 20;
+        this.state={
+            ready:true
+        }
     }
+
+
+
+
 
     componentDidMount(){
         anime({

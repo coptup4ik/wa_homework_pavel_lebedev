@@ -15,23 +15,15 @@ function BreadCrumbs() {
 }
 
 
-function SortBy() {
-    return (
-        <div className="sort">
-            <span className="sort__text">Sort by</span>
-            <select className="sort__select">
-                <option className="sort__option">Price ascending</option>
-                <option className="sort__option">Price descending</option>
-            </select>
-        </div>
-    );
-}
 
 
 
 export class Content extends React.Component{
     constructor(){
-        super()
+        super();
+        this.state = {
+            sortBy:null
+        }
     }
 
     render() {
@@ -39,9 +31,22 @@ export class Content extends React.Component{
             <div className="content">
                 <div className="content-nav">
                     <BreadCrumbs />
-                    <SortBy />
+                    <div className="sort">
+                        <span className="sort__text" >Sort by</span>
+                        <label className="sort__select">
+                            <input type="radio" id="sort_option_1" name="select" className="sort__option" onChange={(e)=>this.setState({
+                                sortBy:e.target.id
+                            })}/>Price ascending<br/>
+                            <input type="radio" id="sort_option_2" name="select" className="sort__option" onChange={(e)=>this.setState({
+                                sortBy:e.target.id
+                            })}/>Price descending<br/>
+                            <input type="radio" id="default" name="select" className="sort__option" onChange={(e)=>this.setState({
+                                sortBy:e.target.id
+                            })}/>Default
+                        </label>
+                    </div>
                 </div>
-                <GoodsItems />
+                <GoodsItems sortBy={this.state.sortBy}/>
             </div>
         );
     }

@@ -1,9 +1,14 @@
 import * as React from 'react';
 import './footer.scss';
+import {SubscribeModal} from "./subscribeModal.component.jsx";
 
 export class Footer extends React.Component{
     constructor(){
         super()
+        this.state = {
+            activeClass:false,
+            inputField:''
+        }
     }
 
     render() {
@@ -35,12 +40,26 @@ export class Footer extends React.Component{
                         <div className="footer__subscribe">
                             <p className="block__header">Subscribe to newsletter</p>
                             <div className="block__email">
-                                <input type="text" className="block__email_text" placeholder="Enter your email"/>
-                                <button className="block__email_btn">SUBSCRIBE</button>
+                                <input type="text" className="block__email_text" placeholder="Enter your email" value={this.state.inputField}
+                                onChange={(value)=>{
+                                    this.setState({
+                                        inputField:value.target.value
+                                    })
+                                }}
+                                />
+                                <button className="block__email_btn" onClick={()=>{
+                                    this.setState({activeClass:!this.state.activeClass});
+                                    setTimeout(()=>{this.setState({activeClass:!this.state.activeClass});},6000)
+                                    this.setState({
+                                        inputField:""
+                                    })
+                                }}>SUBSCRIBE</button>
+                                {this.state.activeClass && <SubscribeModal active={this.state.activeClass}/>}
                             </div>
                             <div className="block__social">
                                 <i className="fab fa-twitter block__social_icon"></i>
                                 <i className="fab fa-facebook-f block__social_icon"></i>
+
                             </div>
                         </div>
                     </div>
